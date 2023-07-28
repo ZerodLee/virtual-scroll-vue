@@ -1,7 +1,9 @@
-import App from "../src/App";
-const a = { sd: 12 };
-function my() {
-  console.log("hello");
-}
-my();
-export default App;
+import App from "./App";
+import Vue from "vue";
+
+new Vue({
+  el: "#app",
+  render(h) {
+    return h(App);
+  },
+});

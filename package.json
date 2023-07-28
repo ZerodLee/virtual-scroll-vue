@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "virtual-scroll component by vue",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "dev": "rollup --config build/rollup.config.dev.js --watch",
     "build": "rollup --config build/rollup.config.prod.js",

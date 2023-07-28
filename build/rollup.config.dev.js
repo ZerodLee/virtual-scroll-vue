@@ -1,15 +1,15 @@
 // rollup.config.js
-// import json from "@rollup/plugin-json";
-// import terser from "@rollup/plugin-terser";
-// import { nodeResolve } from "@rollup/plugin-node-resolve";
-// import commonjs from "@rollup/plugin-commonjs";
-// import vue from "rollup-plugin-vue";
-import merge from "deepmerge";
-import config from "./rollup.config.js";
-import serve from "rollup-plugin-serve";
-import copy from "rollup-plugin-copy";
+// import merge from "deepmerge";
+// import config from "./rollup.config.js";
+// import serve from "rollup-plugin-serve";
+// import copy from "rollup-plugin-copy";
 
-export default merge(config, {
+const merge = require("deepmerge");
+const config = require("./rollup.config.js");
+const serve = require("rollup-plugin-serve");
+const copy = require("rollup-plugin-copy");
+
+module.exports = merge(config, {
   input: "playground/main.js",
   // output: [
   //   {
@@ -22,7 +22,10 @@ export default merge(config, {
   plugins: [
     serve("dist"),
     copy({
-      targets: [{ src: "public/index.html", dest: "dist" }],
+      targets: [
+        { src: "public/index.html", dest: "dist" },
+        { src: "public/fastly.jsdelivr.net_npm_vue@2.6.14_dist_vue.js", dest: "dist" },
+      ],
     }),
   ],
 });

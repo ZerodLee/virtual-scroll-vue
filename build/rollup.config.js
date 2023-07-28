@@ -1,11 +1,15 @@
 // rollup.config.js
 // import json from "@rollup/plugin-json";
 // import terser from "@rollup/plugin-terser";
-import { nodeResolve } from "@rollup/plugin-node-resolve";
-import commonjs from "@rollup/plugin-commonjs";
-import vue from "rollup-plugin-vue";
+// import { nodeResolve } from "@rollup/plugin-node-resolve";
+// import commonjs from "@rollup/plugin-commonjs";
+// import vue from "rollup-plugin-vue";
 
-export default {
+const { nodeResolve } = require("@rollup/plugin-node-resolve");
+const commonjs = require("@rollup/plugin-commonjs");
+const vue = require("rollup-plugin-vue");
+
+module.exports = {
   input: "src/main.js",
   output: [
     {
@@ -14,6 +18,7 @@ export default {
       name: "VirtualScrollVue",
     },
   ],
+  external: ["vue"],
   //   plugins: [json()],
   plugins: [
     nodeResolve({
