@@ -1,5 +1,5 @@
 {
-  "name": "virtual-scroll-vue",
+  "name": "virtual-scroll-vue-slot",
   "version": "0.1.0",
   "description": "virtual-scroll component by vue",
   "main": "dist/bundle.min.js",
