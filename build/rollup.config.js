@@ -10,7 +10,7 @@ const commonjs = require("@rollup/plugin-commonjs");
 const vue = require("rollup-plugin-vue");
 
 module.exports = {
-  input: "src/main.js",
+  input: "src/index.js",
   output: [
     {
       file: "dist/bundle.js",

@@ -1,14 +1,18 @@
 // rollup.config.js
 // import json from "@rollup/plugin-json";
-import terser from "@rollup/plugin-terser";
+// import terser from "@rollup/plugin-terser";
 // import { nodeResolve } from "@rollup/plugin-node-resolve";
 // import commonjs from "@rollup/plugin-commonjs";
 // import vue from "rollup-plugin-vue";
-import merge from "deepmerge";
-import config from "./rollup.config.js";
-import babel from "@rollup/plugin-babel";
+// import merge from "deepmerge";
+// import config from "./rollup.config.js";
+// import babel from "@rollup/plugin-babel";
+const merge = require("deepmerge");
+const config = require("./rollup.config.js");
+const babel = require("@rollup/plugin-babel");
+const terser = require("@rollup/plugin-terser");
 
-export default merge(config, {
+module.exports = merge(config, {
   // input: "src/main.js",
   output: [
     // {
@@ -16,9 +20,9 @@ export default merge(config, {
     //   format: "cjs",
     // },
     {
-      file: "bundle.min.js",
-      format: "iife",
-      name: "version",
+      file: "dist/bundle.min.js",
+      format: "umd",
+      name:"VirtualScroll",
       plugins: [terser()],
     },
   ],
