@@ -64,7 +64,7 @@ export default {
         this.expand;
     },
     getChildren() {
-      console.log(this.visibleRegions);
+      // console.log(this.visibleRegions);
       return this.visibleRegions.map((item) => {
         return this.$scopedSlots.default(item);
       });
@@ -78,7 +78,7 @@ export default {
       class: "scroll-container ",
       nativeOn: {
         scroll: (e) => {
-          console.log("scroll", e);
+          // console.log("scroll", e);
           this.handleScroll();
         },
       },
@@ -119,7 +119,7 @@ export default {
 <style>
 /* 组件样式 */
 .scroll-container {
-  height: 400px;
+  /* height: 400px; */
   overflow-y: auto;
 }
 
@@ -128,10 +128,10 @@ export default {
   box-sizing: border-box;
 }
 
-.virtual-list > * {
-  /* height: 40px;
-  line-height: 40px; */
-  border-bottom: 1px solid #ccc;
-  /* padding: 10px; */
-}
+/* .virtual-list > * {
+  height: 40px;
+  line-height: 40px; 
+  border-bottom: 1px solid #ccc; 
+  padding: 10px;
+} */
 </style>
