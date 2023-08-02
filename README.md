@@ -1,6 +1,12 @@
-# virtual-scroll-vue
+# virtual-scroll-vue-slot
 
 vue 的虚拟滚动组件
+
+![npm bundle size](https://img.shields.io/bundlephobia/min/virtual-scroll-vue-slot)
+![npm](https://img.shields.io/npm/dm/virtual-scroll-vue-slot)
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/ZerodLee/virtual-scroll-vue/main?color=%23c4d316)
+
+
 
 ## usage
 
