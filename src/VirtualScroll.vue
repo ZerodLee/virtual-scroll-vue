@@ -58,7 +58,7 @@ export default {
       const container = this.$refs.containerRef.$el;
       const scrollTop = container.scrollTop;
       const start = Math.floor(scrollTop / this.itemHeight) - this.expand;
-      this.visibleStartIndex = start > 0 ? start : 1;
+      this.visibleStartIndex = start >= 0 ? start : 0;
       this.visibleEndIndex =
         Math.min(this.visibleStartIndex + Math.ceil(this.containerHeight / this.itemHeight), this.items.length - 1) +
         this.expand;
@@ -104,9 +104,10 @@ export default {
     const listStyle = {
       height: `${this.totalHeight}px`,
       padding: `${this.visibleStartIndex * this.itemHeight}px 0 ${
-        (this.items.length - this.visibleEndIndex - 1) * this.itemHeight
+        (this.items.length - this.visibleEndIndex) * this.itemHeight
       }px`,
     };
+    // console.log("this.visibleStartIndex", this.visibleStartIndex, this.items.length, this.itemHeight);
     const listVNode = h("div", { style: listStyle, class: "virtual-list" }, this.getChildren());
 
     // const childrenList = this.getChildren();
